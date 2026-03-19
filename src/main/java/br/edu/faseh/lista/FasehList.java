@@ -42,5 +42,47 @@ public class FasehList<T> {
 
     // Design the other list methods.
 //    Insert at the end, in order, remove at the end,
-//    remove elements by value, search an element.
+//    remove elements by value, search an element. 
+   
+public void insertAtEnd(T value) {
+    Node<T> newNode = new Node<>(value);
+
+    if (firstNode == null) {
+        firstNode = newNode;
+    } else {
+        Node<T> current = firstNode;
+
+        while (current.getNext() != null) {
+            current = current.getNext();
+        }
+
+        current.setNext(newNode);
+    }
+
+    totalElements++;
+}
+
+public boolean removeByKey(T value) {
+    if (firstNode == null) {
+        return false;
+    }
+
+    if (firstNode.getValue().equals(value)) {
+        firstNode = firstNode.getNext();
+        totalElements--;
+        return true;
+    }
+
+    Node<T> current = firstNode;
+
+    while (current.getNext() != null) {
+        if (current.getNext().getValue().equals(value)) {
+            current.setNext(current.getNext().getNext());
+            totalElements--;
+            return true;
+        }
+        current = current.getNext();
+    }
+
+    return false;
 }
