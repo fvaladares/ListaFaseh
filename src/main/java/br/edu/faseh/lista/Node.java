@@ -5,7 +5,7 @@ package br.edu.faseh.lista;
 
 public class Node<T> {
     private T value;
-    private Node next;
+    private Node<T> next;
 
     public Node(T valor) {
         this.value = valor;

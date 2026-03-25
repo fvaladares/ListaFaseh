@@ -1,14 +1,38 @@
 package br.edu.faseh.lista;
+
 public class FasehList<T> {
     // Hold the reference to the first node of this List.
     private Node<T> firstNode;
     private int totalElements;
 
+    private Node<T> getNewNode(T value) {
+        return new Node<>(value);
+    }
+
     public void insertAtBeginning(T value) {
-        Node<T> newNode = new Node<>(value);
+        Node<T> newNode = getNewNode(value);
         newNode.setNext(firstNode);
         firstNode = newNode;
         totalElements++;
+    }
+
+    public void insertAtTheEnd(T value) {
+        Node<T> newNode = getNewNode(value);
+        Node<T> aux = firstNode;
+
+        if (firstNode != null) {
+            while (aux.getNext() != null) {
+                aux = aux.getNext();
+            }
+
+            aux.setNext(newNode);
+        } else {
+            insertAtBeginning(value);
+        }
+
+        totalElements++;
+
+
     }
 
     public Node<T> removeAtBeginning() {
@@ -20,7 +44,7 @@ public class FasehList<T> {
 
     @Override
     public String toString() {
-        if(this.totalElements == 0) {
+        if (this.totalElements == 0) {
             return "[ ]";
         }
 
@@ -35,9 +59,11 @@ public class FasehList<T> {
 
         }
 
+        builder.delete(builder.length()-2, builder.length());
+
         builder.append("]");
 
-        return  builder.toString();
+        return builder.toString();
     }
 
     // Design the other list methods.

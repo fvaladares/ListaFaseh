@@ -12,10 +12,16 @@ public class Main {
 
         System.out.println(myList);
 
-        myList.removeAtBeginning();
+        Node<Integer> val = myList.removeAtBeginning();
 
         System.out.println(myList);
 
         System.out.println();
+
+        System.out.println("Inserting data at the end");
+
+        myList.insertAtTheEnd(666);
+
+        System.out.println(myList);
     }
 }
