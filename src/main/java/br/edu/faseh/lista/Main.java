@@ -20,7 +20,7 @@ public class Main {
 
         System.out.println("Inserting data at the end");
 
-        myList.insertAtTheEnd(666);
+        myList.insertAtTheEnd(2026);
 
         System.out.println(myList);
     }

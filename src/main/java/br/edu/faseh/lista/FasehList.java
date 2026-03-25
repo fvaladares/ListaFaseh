@@ -24,15 +24,11 @@ public class FasehList<T> {
             while (aux.getNext() != null) {
                 aux = aux.getNext();
             }
-
             aux.setNext(newNode);
+            totalElements++;
         } else {
             insertAtBeginning(value);
         }
-
-        totalElements++;
-
-
     }
 
     public Node<T> removeAtBeginning() {
@@ -59,6 +55,8 @@ public class FasehList<T> {
 
         }
 
+        // Remove os dois últimos elementos da String, antes de finalizar
+        // (elimina a vírgula e o espaço excedentes.
         builder.delete(builder.length()-2, builder.length());
 
         builder.append("]");
