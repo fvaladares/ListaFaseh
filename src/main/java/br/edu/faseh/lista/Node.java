@@ -4,7 +4,7 @@ package br.edu.faseh.lista;
 // this enables you to check if two elements are or not equals.
 
 public class Node<T> {
-    private T value;
+    private final T value;
     private Node<T> next;
 
     public Node(T valor) {
@@ -16,7 +16,7 @@ public class Node<T> {
         return this.next;
     }
 
-    public void setNext(Node next) {
+    public void setNext(Node<T> next) {
         this.next = next;
     }
 
