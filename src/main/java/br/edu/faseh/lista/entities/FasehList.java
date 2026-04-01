@@ -1,6 +1,4 @@
-package br.edu.faseh.lista;
-
-import jdk.jshell.spi.ExecutionControl;
+package br.edu.faseh.lista.entities;
 
 public class FasehList<T> {
     // Hold the reference to the first node of this List.
