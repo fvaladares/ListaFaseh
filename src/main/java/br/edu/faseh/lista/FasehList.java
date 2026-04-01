@@ -1,7 +1,5 @@
 package br.edu.faseh.lista;
 
-import jdk.jshell.spi.ExecutionControl;
-
 public class FasehList<T> {
     // Hold the reference to the first node of this List.
     private Node<T> firstNode;
@@ -55,8 +53,6 @@ public class FasehList<T> {
             if(firstNode == lastNode) {
                 aux = firstNode;
                 lastNode = firstNode = null;
-
-                return aux;
             } else {
                 aux = firstNode.getNext();
                 previous = firstNode;
@@ -69,8 +65,8 @@ public class FasehList<T> {
                 previous.setNext(null);
                 lastNode = previous;
                 totalElements--;
-                return aux;
             }
+            return aux;
         }
     }
 
@@ -111,9 +107,7 @@ public class FasehList<T> {
             }
             aux = aux.getNext();
         }
-
         return false;
-
     }
 
     @Override
